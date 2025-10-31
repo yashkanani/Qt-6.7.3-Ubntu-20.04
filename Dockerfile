@@ -5,6 +5,7 @@ ARG QT_VERSION=6.7.3
 ARG QT_SRC_URL=https://download.qt.io/archive/qt/6.7/6.7.3/single/qt-everywhere-src-6.7.3.tar.xz
 ENV QTDIR=/opt/Qt/${QT_VERSION}
 ENV PATH=${QTDIR}/bin:${PATH}
+ENV LD_LIBRARY_PATH=${QTDIR}/lib:$LD_LIBRARY_PATH
 
 # Install build dependencies
 RUN apt-get update && apt-get install -y \
